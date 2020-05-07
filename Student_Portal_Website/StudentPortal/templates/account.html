@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <div class="account-container">
+        <div class="profile">
+            <div class="profile-upper">
+                <div class="profile-pic-container">
+                    <img src="{{ image_file }}" alt="" class="profile-pic">              
+                </div>
+            </div>
+            <div class="profile-lower">
+                <div class="profile-name">
+                    <h4>{{ studentinfo.full_name }}</h4>
+                </div>
+                <div class="profile-lower-content">
+                    <div class="profile-label">
+                        GPA
+                    </div>
+                    <div class="profile-info">
+                        {{ studentresult.gpa}}
+                    </div>
+                </div>
+                <div class="profile-lower-content">
+                    <div class="profile-label">
+                        Course
+                    </div>
+                    <div class="profile-info">
+                        {{ studentinfo.course }}
+                    </div>
+                </div>
+                <div class="profile-lower-content">
+                    <div class="profile-label">
+                        Date of Birth
+                    </div>
+                    <div class="profile-info">
+                        11th November 2000
+                    </div>
+                </div>
+                <div class="profile-lower-content">
+                    <div class="profile-label">
+                        Email
+                    </div>
+                    <div class="profile-info">
+                        {{ studentinfo.email }}
+                    </div>
+                </div>
+                <div class="profile-lower-content">
+                    <div class="profile-label">
+                        ID
+                    </div>
+                    <div class="profile-info">
+                        {{ current_user.id }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account-setting">
+            <div class="update-form">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-2">
+                            Update Info
+                        </legend>
+                        <div class="form-group">
+                            {{ form.name.label(class="form-control-label") }}
+                            {% if form.name.errors %}
+                                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.name.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.name(class="form-control form-control-lg") }}
+                            {% endif %}
+        
+                            
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label(class="form-control-label") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.pic.label(class="") }}
+                            {{ form.pic(class="form-control-file") }}
+                            {% if form.pic.errors %}
+                                {% for error in form.pic.errors %}
+                                    <span class="text-danger">{{ error }}</span>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+        
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-secondary update-button") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light bg-primary navbar-expand-sm navbg">
+			<a href="{{ url_for('home') }}" class="navbar-brand brand-nav">University Portal</a>
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarMenu">
+				<ul class="navbar-nav ml-4 text-white">
+					<li class="nav-item"><a href="{{ url_for('home') }}" class="nav-link text-white">Home</a></li>
+					<li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link text-white">About</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto mr-4 text-white">
+					{% if current_user.is_authenticated %}
+						<li class="nav-item"><a href="{{ url_for('account') }}" class="nav-link text-white">Account</a></li>
+						<li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link text-white">Log Out</a></li>
+					{% else %}
+						<li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link text-white">Login</a></li>
+					{% endif %}
+				</ul>
+			</div>
+			
+		</nav>
+
+
+
+@app.route("/admin", methods=["POST", "GET"])
+def admin():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        student1=Student(id=form.id.data, password=form.password.data)
+        studentinfo = StudentInfo(full_name=form.name.data, course=form.course.data, email=form.email.data, advisor=form.advisor.data, phone_number=form.phone.data, module1=form.mod1.data, module2=form.mod2.data, module3=form.mod3.data, module4=form.mod4.data, student_id=student1.id)
+        studentresults= StudentResults(result1=form.result1.data, result2=form.result2.data, result3=form.result3.data, result4=form.result4.data, gpa=form.gpa.data, student_id=student1.id)
+    
+        db.session.add(student1)
+        db.session.add(studentinfo)
+        db.session.add(studentresults)
+        db.session.commit()
+        flash("Account created", "success")
+        return redirect(url_for('home'))
+
+    return render_template("admin.html", form=form)

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+    
+
+{% block body %}
+    {% if current_user.is_authenticated %}
+        <div class="home" id="home-auth">
+            <div class="auth-title">
+                Welcome, {{ studentinfo.full_name }}
+            </div>
+            
+            <div class="student-options">
+                <div class="student-links">
+                    <a href="#" class="btn student-link">Student Information</a>
+                </div>
+                <div class="student-links">
+                    <a href="{{ url_for('results') }}" class="btn student-link">Module List and Results</a>
+                </div>
+                <div class="student-links">
+                    <a href="{{ url_for('account') }}" class="btn student-link">Account Settings</a>
+                </div>
+
+            </div>
+                
+        </div>
+        
+    {% else %}
+        <div class="home" id="home">
+            <div class="landing-text">
+                <h1 class="landing-heading">University Portal by Team Hentai</h1>
+                <h3 class="landing-texts">All your information, in an interactive web-app</h3>
+                <a href="{{ url_for('login') }}" class="btn btn-secondary btn-lg landing-button">Log Into Your Student Account</a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

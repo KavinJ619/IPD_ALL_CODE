@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="result-container">
+        <div class="information-card">
+            <div class="course-name">
+                {{ studentinfo.course }}
+            </div>
+            <div class="module-result-table">
+                <div class="module-name">
+                    Module Name
+                </div>
+                <div class="result">
+                    Result/Mark
+                </div>
+            </div>
+            <div class="module-result-table">
+                <div class="module-name">
+                    {{ studentinfo.module1 }}
+                </div>
+                <div class="result">
+                    {{ studentresult.result1 }}
+                </div>
+            </div>
+            <div class="module-result-table">
+                <div class="module-name">
+                    {{ studentinfo.module2 }}
+                </div>
+                <div class="result">
+                    {{ studentresult.result2 }}
+                </div>
+            </div>
+            <div class="module-result-table">
+                <div class="module-name">
+                    {{ studentinfo.module3 }}
+                </div>
+                <div class="result">
+                    {{ studentresult.result3 }}
+                </div>
+            </div>
+            <div class="module-result-table">
+                <div class="module-name">
+                    {{ studentinfo.module4 }}
+                </div>
+                <div class="result">
+                    {{ studentresult.result4 }}
+                </div>
+            </div>
+            <div class="gpa-container">
+                GPA: {{ studentresult.gpa }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

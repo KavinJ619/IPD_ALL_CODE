@@ -1,0 +1,371 @@
+:root{
+    --back_color: #221F2E;
+    --font_color: #2E2B3F;
+    --purple: #6240F6;
+    --pink: #EB7ACB ;
+    --blue: #2Db8E7;
+}
+
+
+
+.content-section{
+    width: 40%;
+    margin: 30px auto;
+    box-shadow: 0px 0px 13px 2px rgba(0,0,0,0.75);
+    padding: 30px;
+    min-width: 300px;
+}
+
+.navigation-bar{
+    background-color: #1414df;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    margin-right: 40px;
+    font-family: 'Bitter', serif;
+    letter-spacing: 2px;
+    margin-left: 40px;
+
+}
+
+.nav-item{
+    font-size: 18px;
+}
+
+.right-side-nav{
+    margin-right: 40px;
+}
+
+#home{
+    text-align: center;
+    margin: 250px auto;
+}
+.landing-text{
+    
+}
+
+.portal-nav{
+    background-color: transparent;
+}
+
+.landing-heading{
+    font-size: 3em;
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 20px;
+
+}
+
+.landing-texts{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    
+}
+
+.landing-button{
+    color: white;
+    background-color: black;
+    margin-top: 50px;
+    transition: 0.1s ease-in-out;
+}
+
+.landing-button:hover{
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+
+}
+
+#home-auth{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.auth-title{
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+.student-options{
+    margin-top: 40px;
+
+}
+
+.student-links{
+    padding: 30px;
+
+}
+
+.student-link{
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px ;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    transition: 0.1s ease-in-out;
+    background-color: #39ac73;
+    outline: none;
+}
+
+.student-link:hover{
+    background-color: white;
+    color: #39ac73;
+    letter-spacing: 0.25px;
+    border: 1px solid #39ac73;
+    font-weight: bold;
+
+}
+
+.account-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile{
+
+    max-width: 350px;
+
+    box-shadow: 0px 0px 10px black;
+    margin: 30px;
+    word-wrap: break-word;
+    font-size: 20px;
+}
+
+.profile-upper{
+    height: 200px;
+    background: linear-gradient(to right, #00001a 20%, #000000 91%);
+}
+
+.profile-pic{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    transform: translateY(10%);
+    
+}
+
+.profile-lower{
+    max-height: 800px;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.profile-name{
+    text-align: center;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile-lower-content{
+    background: linear-gradient(to right, #00001a 20%, #000000 91%);
+    color: white;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.account-setting{
+    border: 1px solid #00004d;
+    margin: 30px;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00001a 20%, #000000 91%);
+    color: whitesmoke;
+    
+}
+
+.update-form{
+    margin-top: 50px;
+    width: 500px;
+    
+}
+
+.update-button{
+    color: whitesmoke;
+    background-color: linear-gradient(to right, #00001a 20%, #000000 91%);
+    border-color: whitesmoke;
+}
+
+.message-flash{
+    width: 30%;
+    text-align: center;
+    margin: 15px auto;
+}
+
+
+
+
+.form-legend{
+    font-size: 22px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+.form-column-2{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.form-input{
+    margin-bottom: 20px;
+}
+
+.form-label{
+    font-size: 18px;
+}
+
+.form-info{
+    width: 100%;
+    font-size: 25px;
+    border-radius: 3px;
+    border: 1px solid gray;
+}
+
+.admin-button{
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 768px){
+    .account-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+} 
+
+@media only screen and (max-width: 1200px){
+    .account-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .update-form{
+        width: 300px;
+    }
+
+    .form-column-2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-section{
+        width: 80%;
+    }
+
+    .result-container{
+        width: 100%;
+    }
+
+    .info-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .student-information-card{
+
+    }
+
+    .info-row{
+        display: flex;
+        flex-direction: column;
+    }
+} 
+
+.result-container{
+    position: absolute;
+    left: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    width: 600px;
+    height: 500px;
+}
+
+.information-card{
+    background-color: #004458;
+    height: 100%;
+    color: #A5BDC4;
+    text-transform: uppercase;
+}
+
+.course-name{
+    background-color: #004458;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 3px solid white;
+    font-weight: bold;
+    
+}
+
+.module-result-table{
+    padding: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid white;
+}
+
+.module-name{
+    font-weight: bold;
+}
+
+.gpa-container{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+
+
+
+.info-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.student-information-card{
+    margin-top: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    width: 600px;
+    height: 100%;
+}
+
+.info-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2E2B3F;
+    border-bottom: 4px solid white;
+    color: #CAD5EE;
+}
+
+.info-label{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 300px;
+}
+
+.info-data{
+    text-transform: uppercase;
+    font-size: 15px;
+}
